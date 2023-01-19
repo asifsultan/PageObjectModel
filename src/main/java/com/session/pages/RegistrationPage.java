@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-
 public class RegistrationPage extends BasePage {
 
 	public RegistrationPage(WebDriver driver) {
@@ -42,6 +41,7 @@ public class RegistrationPage extends BasePage {
 	public WebElement getHomePage() {
 		return getElement(homePageSignup);
 	}
+
 	public WebElement getContinueBtn() {
 		return getElement(continueBtn);
 	}
@@ -113,6 +113,7 @@ public class RegistrationPage extends BasePage {
 	public boolean checkErrorMessage() {
 		return getElements(errorMessage);
 	}
+
 	public AccountCreated fillRegistrationForm(String fName, String lName, String emailD, String telephoneD,
 			String faxD, String companyD, String addressD, String zipD, String cityD, String countryD, String stateD,
 			String loginND, String passD, String confirmD) {
@@ -144,11 +145,10 @@ public class RegistrationPage extends BasePage {
 //			return new AccountCreated(driver);
 //		}
 		if (checkErrorMessage()) {
-			throw new IllegalStateException("Account is not created " + getErrorMessage());
+			throw new IllegalArgumentException("Account is not created " + getErrorMessage());
 		} else {
 			return new AccountCreated(driver);
 		}
-		
 
 	}
 

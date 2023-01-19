@@ -64,13 +64,15 @@ public class BasePage {
 		}
 
 	}
-	
+
 	public boolean getElements(By locator) {
-		if(driver.findElements(locator).size() > 0) {
+		if (driver.findElements(locator).size() > 0) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
 	}
+	
+	//!driver.findElements(By.id("...")).isEmpty()
 
 }

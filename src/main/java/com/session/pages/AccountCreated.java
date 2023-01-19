@@ -18,7 +18,7 @@ public class AccountCreated extends BasePage {
 		// TODO Auto-generated constructor stub
 		if (!driver.getTitle().equals("Your Account Has Been Created!")) {
 			throw new IllegalStateException(
-					"Account is not created " );
+					"current page is: " + getUrl() );
 		}
 	
 
